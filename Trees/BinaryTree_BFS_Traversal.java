@@ -12,11 +12,7 @@ class Node {
 }
 
 class BinaryTree {
-//   This is another common type of traversal that visits all the nodes of a level before going to the next level.
-
-// This kind of traversal is also called level-order, and visits all the levels of the tree starting from the root, and from left to right.
-
-// For the implementation, we'll use a Queue to hold the nodes from each level in order. We'll extract each node from the list, print its values, then add its children to the queue:
+  // Level-order traversal - visits all the levels of the tree starting from the root, and from left to right.
   void traverseLevelOrder(Node root) {
     if (root == null) {
       return;
