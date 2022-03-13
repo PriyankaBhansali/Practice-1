@@ -5,7 +5,7 @@ class BinarySearch {
   // Returns index of x if it is present in arr[l.. r], else return -1
   int binarySearch(int arr[], int low, int high, int x) {
     while (low <= high) {
-      int mid = low + (high - low) / 2;
+      int mid = low + (high - low) / 2; // OR mid = (low + high) / 2;
       if (arr[mid] == x) {
         return mid;
       } else if (arr[mid] > x) {
@@ -13,6 +13,23 @@ class BinarySearch {
       } else {
         low = mid + 1;
       }
+    }
+    return -1;
+  }
+
+  int binarySearchRecursive(int arr[], int low, int high, int x) {
+    if (low <= high) {
+      int mid = low + (high - low) / 2;
+
+      // check if mid element is searched element
+      if (arr[mid] == x)
+        return mid;
+
+      // Search the left half of mid
+      if (arr[mid] > x)
+        return binarySearchRecursive(arr, low, mid - 1, x);
+      // Search the right half of mid
+      return binarySearchRecursive(arr, mid + 1, high, x);
     }
     return -1;
   }
